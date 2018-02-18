@@ -1,0 +1,62 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dectionary application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="main.js"></script>
+     <link rel="stylesheet" type="text/css" media="screen" href="aps.css" />
+</head>
+<header class="topheader">
+
+        <b> an application for Dectionary and Transalation</b> 
+      
+</header>
+<body>
+      
+    
+    <div class="tab">
+        <button class="tablinks" onclick="openapp(event, 'Dectionary')" id="defaultOpen">Dectionary</button>
+        <button class="tablinks" onclick="openapp(event, 'Translation')">Translation</button>
+        <button class="tablinks" onclick="openapp(event, 'Settings')">Settings</button>
+      </div>
+      
+      <div id="Dectionary" class="tabcontent">
+        <h3>Dectionary</h3>
+        <p>this is a Dectionary pages.</p>
+      </div>
+      
+      <div id="Translation" class="tabcontent">
+        <h3>Translation</h3>
+        <p>This is Translation pages.</p> 
+      </div>
+      
+      <div id="Settings" class="tabcontent">
+        <h3>Settings</h3>
+        <p>This is Settings pages</p>
+      </div>
+      
+      <script>
+      function openapp(evt, decName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+              tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+              tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(decName).style.display = "block";
+          evt.currentTarget.className += " active";
+      }
+      
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById("defaultOpen").click();
+      </script>
+
+
+
+</body>
+</html>
